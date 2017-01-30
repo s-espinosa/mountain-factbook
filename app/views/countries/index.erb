@@ -1,0 +1,15 @@
+<h1>All Countries</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Additional Info</th>
+  </tr>
+  <% @countries.each do |country| %>
+    <tr>
+      <td><%= country.name %></td>
+      <td><a href="/countries/<%= country.id %>">Additional Info</a></td>
+    </tr>
+  <% end %>
+</table>
+

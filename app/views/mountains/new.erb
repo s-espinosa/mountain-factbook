@@ -1,0 +1,15 @@
+<h1>Create a New Mountain</h1>
+
+<form action="/mountains" method="post">
+  <label for="">Name:</label>
+  <input type="textfield" name="mountain[name]">
+  <label for="">Annual Climbers:</label>
+  <input type="textfield" name="mountain[annual_climbers]">
+  <label for="">Country:</label>
+  <select name="mountain[country_id]">
+    <% @countries.each do |country| %>
+      <option value=<%= country.id %>><%= country.name %></option>
+    <% end %>
+  </select>
+  <input type="submit" value="Create New Mountain" />
+</form>

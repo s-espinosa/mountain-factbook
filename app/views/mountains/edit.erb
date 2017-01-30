@@ -1,0 +1,16 @@
+<h1>Create a New Mountain</h1>
+
+<form action="/mountains/<%= @mountain.id %>" method="post">
+  <input type="hidden" name="_method" value="PUT" />
+  <label for="">Name:</label>
+  <input type="textfield" name="mountain[name]" value="<%= @mountain.name %>">
+  <label for="">Annual Climbers:</label>
+  <input type="textfield" name="mountain[annual_climbers]" value="<%= @mountain.annual_climbers %>">
+  <label for="">Country:</label>
+  <select name="mountain[country_id]">
+    <% @countries.each do |country| %>
+      <option value=<%= country.id %>><%= country.name %></option>
+    <% end %>
+  </select>
+  <input type="submit" value="Update Mountain" />
+</form>

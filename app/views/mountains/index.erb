@@ -1,0 +1,25 @@
+<h1>All Mountains</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Annual Climbers</th>
+    <th>Country</th>
+    <th>Additional Info</th>
+    <th>Delete</th>
+  </tr>
+  <% @mountains.each do |mountain| %>
+    <tr>
+      <td><%= mountain.name %></td>
+      <td><%= mountain.annual_climbers %></td>
+      <td><%= mountain.country.name %></td>
+      <td><a href="/mountains/<%=mountain.id %>">Additional Info</a></td>
+      <td>
+        <form action="/mountains/<%= mountain.id %>" method="post">
+          <input type="hidden" name="_method" value="DELETE" />
+          <input type="submit" value="Delete" />
+        </form>
+      </td>
+    </tr>
+  <% end %>
+</table>

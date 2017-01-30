@@ -1,0 +1,22 @@
+<h1>Country: <%= @country.name %></h1>
+
+<h2>Mountains</h2>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Elevation in Feet</th>
+    <th>Annual Climbers</th>
+    <th>Country</th>
+  </tr>
+  <% @country.mountains.each do |mountain| %>
+    <tr>
+      <td><%= mountain.name %></td>
+      <td><%= mountain.elevation_in_feet %></td>
+      <td><%= mountain.annual_climbers %></td>
+      <td><%= mountain.country.name %></td>
+    </tr>
+  <% end %>
+</table>
+
+<h2>Stats</h2>
+<p>Annual Climbers: <%= @country.mountains.total_annual_climbers %></p>
